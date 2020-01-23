@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Information</title>
+</head>
+<body>
+<h2>Address Information</h2>
+
+<td><font color="red">{{action}}</font></td>
+
+<form action="http://localhost:5000/address/save/" method="post">
+    {% if ad.adrid==0 %}
+        <label hidden>Address Id:</label><input type="text" name="adid" value="{{ad.adrid}}" hidden><br><br>
+    {% else %}
+        Address Id:<input type="text" name="adid" value="{{ad.adrid}}" readonly><br><br>
+    {% endif %}
+    Address City:<input type="text" name="adcity" value="{{ad.adrcity}}" required><br><br>
+    Address State:<input type="text" name="adstate" value="{{ad.adrstate}}" required><br><br>
+    <input type="submit">
+</form>
+
+<table border="1">
+    <thead>
+        <th>AddressId</th>
+        <th>AddressCity</th>
+        <th>AddressState</th>
+        <th>Action</th>
+    </thead>
+    {% for ad in adrs %}
+    <tbody>
+        <td>{{ad.adrid}}</td>
+        <td>{{ad.adrcity}}</td>
+        <td>{{ad.adrstate}}</td>
+        <td>
+            <a href="/address/edit/{{ad.adrid}}">EDIT</a>
+            <a href="/address/delete/{{ad.adrid}}">DELETE</a>
+        </td>
+    </tbody>
+    {% endfor %}
+</table>
+
+</body>
+</html>
