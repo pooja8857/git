@@ -3,4 +3,6 @@ if hungry=='yes':
     print('eat pizza')
     print('eat burger')
 else:
-    print('do ur homework')
+    print('drink water')
+    print('drink soda')
+    
