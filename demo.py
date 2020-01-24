@@ -1,4 +1,6 @@
-print('hello')
-print('hello pooja bore')
-print('do ur homework daily')
-print('come class at 10am sharp')
+hungry=input('i am hungry')
+if hungry=='yes':
+    print('eat pizza')
+    print('eat burger')
+else:
+    print('do ur homework')
